@@ -1,5 +1,5 @@
 import java.util.*;
-class Insertion{
+class ArrayCRUD{
     static void insertAtStart(int[] arr, int val){
         for(int i=arr.length-1;i>0;i--){
             arr[i]=arr[i-1];
@@ -134,6 +134,14 @@ class Insertion{
         }
         System.out.println(sum);
     }
+    static boolean checkIfArrayIsSorted(int[] arr){
+        for(int i=0;i<arr.length-1;i++){
+            if(arr[i+1]<arr[i]){
+                return false;
+            }
+        }
+        return true;
+    }
     public static void main(String[] args) {
         int[] arr = {1,2,3,4,0};//0 is just for extra space
         //insertAtStart(arr, 5);
@@ -156,6 +164,8 @@ class Insertion{
         //removeDuplicatesFromSortedArray(arr6);
         //reverseArray(arr6);
         //printMinAndMax(arr6);
-        sumOfArrayElements(arr6);
+        //sumOfArrayElements(arr6);
+        int[] arr7={2,3,4,5,6,2};
+        System.out.println(checkIfArrayIsSorted(arr7));
     }
 }
